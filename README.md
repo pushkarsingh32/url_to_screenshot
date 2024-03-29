@@ -1,4 +1,4 @@
-# URL to Screenshot( Webpage Screenshot Tool )
+# URL to Screenshot (Webpage Screenshot Tool)
 
 ## Overview
 This is a Python script that captures screenshots of web pages listed in a CSV file concurrently using Selenium WebDriver. It is designed to efficiently handle a large number of URLs and capture screenshots in parallel, making it suitable for tasks like website monitoring, testing, or generating previews.
