@@ -131,6 +131,8 @@ def main() -> None:
     
     try:
         url_list = get_url_list(url_list_path)
+        if not url_list:
+            raise NoURLsFoundError("No URLs found in the URL list file.")
         prepare_screenshots(url_list)
     except FileNotFoundError:
         print(f"Error: CSV file '{url_list_path}' not found")
