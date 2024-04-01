@@ -36,8 +36,10 @@ def get_url_list(file_path: str) -> List[str]:
     
     # Create CSV file if it doesn't exist
     if not os.path.exists(file_path):
-        with open(file_path, 'w'):
-            pass
+        # Create an empty DataFrame with 'URL' column
+        df = pd.DataFrame(columns=['URL'])
+        # Save the DataFrame to CSV
+        df.to_csv(file_path, index=False)
 
     # Check if CSV file is empty
     if os.stat(file_path).st_size == 0:
@@ -47,7 +49,10 @@ def get_url_list(file_path: str) -> List[str]:
 
     # Check if 'URL' column exists in the CSV file
     if 'URL' not in df.columns:
-        raise ValueError("CSV file doesn't contain 'URL' column")
+        # If 'URL' column doesn't exist, create it
+        df['URL'] = ''
+        # Save the DataFrame with the new 'URL' column
+        df.to_csv(file_path, index=False)
 
     # Validate URLs format
     urls = df['URL'].dropna().unique().tolist()
@@ -57,7 +62,6 @@ def get_url_list(file_path: str) -> List[str]:
 
     print(f"URLs: {urls}")
     return urls
-
 
 # def get_domain_name(url: str) -> str:
 #     """
