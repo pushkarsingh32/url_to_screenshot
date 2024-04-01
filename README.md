@@ -20,7 +20,7 @@ This is a Python script that captures screenshots of web pages listed in a CSV f
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/pushkarsingh32/webpage-screenshot-tool.git
+    git clone https://github.com/pushkarsingh32/url_to_screenshot.git
     ```
 
 2. Install the required dependencies:
